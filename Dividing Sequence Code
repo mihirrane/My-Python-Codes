@@ -1,0 +1,33 @@
+n=int(input())
+s=n
+l=[]
+while(n!=0):
+    c=int(input())
+    l.append(c)
+    n-=1
+
+stored=[]
+
+for i in range(s):
+    stored.append(0)
+    
+def best(t):
+    if t==0:
+        stored[0]=1
+        return 1
+    m=1
+    i=t
+    for j in range(i):
+        if l[i]%l[j]==0:
+            if stored[j]!=0:
+                maxi=stored[j]
+            else:
+                maxi=best(j)
+            m=max(maxi+1,m)
+    
+    stored[i]=m    
+    return m
+r=[]
+for i in range(s):   
+    r.append(best(i))   
+print(max(r))
