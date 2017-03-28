@@ -50,9 +50,6 @@ for i in player:
                 nogw+=b
                 nogl+=a
     final[i]=[bo5,bo3,nosw,nogw,nosl,nogl]
-##Start from here
-##new one
-##further modified
 c=len(player)
 m=f=c
 r=0
@@ -70,10 +67,6 @@ l=0
 while(player!=[]):
     maxi=-999
     maxiu=player[0]
-    #if pl2!=[]:
-     #   maxiu=pl2[0]
-    #print("iterating for max "+maxiu)
-    #print("iterating for max "+maxiu +str(prevmax))
     miniflag=0
     maxiflag=0
     p=0
@@ -127,8 +120,7 @@ while(player!=[]):
             
         else:
             if pl2!=[]: 
-                for j in pl2:    
-                    #print("elements in pl2 are: "+j)
+                for j in pl2:   
                     h=len(pl2)
                     for j in range(h):
                         k=final[pl2[j]][l]
@@ -139,31 +131,30 @@ while(player!=[]):
          
                 for j in pl2[:]:
                     if final[j][l]==maxi:
-                        #print("maximums "+j+" maxi= "+str(maxi))
+                        
                         t+=1
                     else:
-                        #print("Removed from z "+j)
+                        
                         pl2.remove(j)
         if q==1:  
-            ##remove
+            
             rank[r]=miniu
             if maxiu in player:
                 player.remove(miniu)  
                 pl2.remove(miniu)
-                #print("Removing "+miniu)
+                
             prevmax=-999
             r+=1
             m-=1
         else:
             l+=1  
         if t==1:
-            ##remove
+            
             rank[r]=maxiu
             if maxiu in player:
                 player.remove(maxiu)  
                 pl2.remove(maxiu)
-                #print("Removing "+maxiu)
-            prevmax=-999
+                prevmax=-999
             r+=1
             m-=1
         else:
